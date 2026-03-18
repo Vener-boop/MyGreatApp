@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <group android:checkableBehavior="single">
+    <item android:icon="@drawable/ic_menu_point"
+          android:id="@+id/nav_home"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:title="@string/menu_home" />
+    <item android:icon="@drawable/ic_menu_point"
+          android:id="@+id/nav_mudozvon"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:title="@string/mudozvon" />
+    <item android:icon="@drawable/ic_menu_point"
+          android:id="@+id/nav_contacts"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:title="@string/menu_contacts" />
+    <item android:icon="@drawable/ic_menu_point"
+          android:id="@+id/nav_gallery"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:title="ПАНЕЛЬ 1" />
+    <item android:icon="@drawable/ic_menu_point"
+          android:id="@+id/nav_slideshow"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:title="ПАНЕЛЬ 2" />
+    <item android:icon="@drawable/ic_menu_point"
+          android:id="@+id/nav_test"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:title="ПАНЕЛЬ 3" />
+  </group>
+</menu>

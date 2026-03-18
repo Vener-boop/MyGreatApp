@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Прокручиваемая основная часть -->
+    <ScrollView
+        android:id="@+id/topScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLinearLayout">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp">
+
+            <!-- Строка: SIM / ТЕСТ / CSV -->
+            <LinearLayout
+                android:id="@+id/panel_Container_SIMS"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/draw_border_label"
+                android:gravity="center_vertical">
+
+                <RadioButton
+                    android:id="@+id/radioButton_SIM_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="SIM 1"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:textSize="12sp"
+                    android:layout_marginStart="4dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton_SIM_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="SIM 2"
+                    android:enabled="false"
+                    android:textSize="12sp"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox_Test"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:text="ТЕСТ"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox_Csv_Mode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.35"
+                    android:text="CSV режим"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- Тестовый номер (скрыт по умолчанию) -->
+            <LinearLayout
+                android:id="@+id/panel_Container_For_Test"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/draw_border_label"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Тест:"
+                    android:textStyle="bold"
+                    android:textSize="13sp"/>
+
+                <EditText
+                    android:id="@+id/editNumberForTest"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="+79826326666"
+                    android:inputType="phone"
+                    android:imeOptions="actionDone"
+                    android:textAlignment="center"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <!-- Числовой диапазон (скрывается в CSV режиме) -->
+            <LinearLayout
+                android:id="@+id/panel_Container_Start_Phone_Number"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/draw_border_label">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Диапазон обзвона (Префикс | Код | Начало | Конец):"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/editNumberPrefix"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.18"
+                        android:layout_gravity="center_vertical"
+                        android:text="+7"
+                        android:inputType="phone"
+                        android:imeOptions="actionDone"
+                        android:textAlignment="center"
+                        android:textSize="13sp"/>
+
+                    <EditText
+                        android:id="@+id/editNumberIndex"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.18"
+                        android:layout_gravity="center_vertical"
+                        android:text="982"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"
+                        android:textAlignment="center"
+                        android:textSize="13sp"/>
+
+                    <EditText
+                        android:id="@+id/editNumberStart"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.32"
+                        android:layout_gravity="center_vertical"
+                        android:text="0000000"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"
+                        android:textAlignment="center"
+                        android:textSize="13sp"/>
+
+                    <EditText
+                        android:id="@+id/editNumberEnd"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.32"
+                        android:layout_gravity="center_vertical"
+                        android:text="9999999"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"
+                        android:textAlignment="center"
+                        android:textSize="13sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- CSV панель (скрыта по умолчанию) -->
+            <LinearLayout
+                android:id="@+id/panel_Container_Csv"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/draw_border_label"
+                android:padding="6dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <Button
+                        android:id="@+id/button_Load_Csv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Загрузить CSV"
+                        android:textSize="12sp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/label_Csv_File"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Файл: не загружен"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/label_Csv_Count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Номеров: 0"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Текущий вызываемый номер -->
+            <LinearLayout
+                android:id="@+id/panel_Container_Current_Phone_Number"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/draw_border_label">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Текущий вызываемый номер:"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:id="@+id/editCurrentNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="60dp"/>
+            </LinearLayout>
+
+            <!-- Временные задержки -->
+            <LinearLayout
+                android:id="@+id/panel_Container_Times_Caller"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/draw_border_label">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Временные задержки (мс):"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Между вызовами"
+                            android:textStyle="bold"
+                            android:textSize="11sp"
+                            android:gravity="center"/>
+
+                        <EditText
+                            android:id="@+id/editTimeBetweenCalls"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="4000"
+                            android:inputType="number"
+                            android:imeOptions="actionDone"
+                            android:textAlignment="center"
+                            android:textSize="13sp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginEnd="12dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Длительность звонка"
+                            android:textStyle="bold"
+                            android:textSize="11sp"
+                            android:gravity="center"/>
+
+                        <EditText
+                            android:id="@+id/editTimeAfterCalls"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="3000"
+                            android:inputType="number"
+                            android:imeOptions="actionDone"
+                            android:textAlignment="center"
+                            android:textSize="13sp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="24dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Временной диапазон суток -->
+            <LinearLayout
+                android:id="@+id/panel_Container_Times_Day"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/draw_border_label">
+
+                <CheckBox
+                    android:id="@+id/checkBox_Day_Time"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:text="Ограничение по времени суток"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:layout_marginStart="8dp"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Начало:"
+                            android:textStyle="bold"
+                            android:textSize="11sp"
+                            android:gravity="center"/>
+
+                        <EditText
+                            android:id="@+id/editTimeDayStart"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="08:00"
+                            android:inputType="time"
+                            android:imeOptions="actionDone"
+                            android:textAlignment="center"
+                            android:textSize="13sp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginEnd="12dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Конец:"
+                            android:textStyle="bold"
+                            android:textSize="11sp"
+                            android:gravity="center"/>
+
+                        <EditText
+                            android:id="@+id/editTimeDayEnd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="22:00"
+                            android:inputType="time"
+                            android:imeOptions="actionDone"
+                            android:textAlignment="center"
+                            android:textSize="13sp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="24dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Лог -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/draw_border_label">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Лог работы:"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <ScrollView
+                    android:id="@+id/scrollView_Log"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp">
+
+                    <TextView
+                        android:id="@+id/text_Log"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="10sp"
+                        android:padding="5dp"
+                        android:textAlignment="viewStart"/>
+                </ScrollView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Кнопки СТАРТ / СТОП (фиксированы внизу) -->
+    <LinearLayout
+        android:id="@+id/bottomLinearLayout"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/draw_border_label">
+
+        <Button
+            android:id="@+id/button_Start"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="СТАРТ"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:background="@drawable/list_selector_background"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/button_Stop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="СТОП"
+            android:textStyle="bold"
+            android:textColor="@color/red"
+            android:background="@drawable/list_selector_background"
+            android:enabled="false"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

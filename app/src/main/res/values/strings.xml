@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">АлыСуЧка</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">АвтоМудозвон</string>
+    <string name="nav_header_subtitle">МФЦ Обзвон</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Настройки</string>
+
+    <string name="menu_home">Главная</string>
+    <string name="mudozvon">Мудозвон</string>
+    <string name="menu_contacts">Контакты</string>
+    <string name="menu_label_mudozvon">Мудозвон</string>
+    <string name="menu_label_alysuchka">АлыСуЧка</string>
+    <string name="menu_label_panel1">ПАНЕЛЬ 1</string>
+    <string name="menu_label_panel2">ПАНЕЛЬ 2</string>
+    <string name="menu_label_panel3">ПАНЕЛЬ 3</string>
+    <string name="menu_label_contscts">Контакты</string>
+
+    <string name="button_start">СТАРТ</string>
+    <string name="button_stop">СТОП</string>
+    <string name="checkbox_test">ТЕСТ</string>
+    <string name="checkbox_timer_period">Ограничение по времени</string>
+    <string name="label_start_number">Диапазон обзвона:</string>
+    <string name="label_current_number">Текущий номер:</string>
+    <string name="label_timer_calls">Временные задержки:</string>
+    <string name="label_timer_between_calls">Между вызовами</string>
+    <string name="label_timer_after_calls">Длительность</string>
+    <string name="label_start_day_calls">Начало:</string>
+    <string name="label_end_day_calls">Конец:</string>
+    <string name="label_log">Лог работы:</string>
+    <string name="title_home">Главная</string>
+    <string name="title_mudozvon">Мудозвон</string>
+    <string name="title_gallery">Панель 1</string>
+    <string name="title_slideshow">Панель 2</string>
+    <string name="title_test">Панель 3</string>
+    <string name="title_contacts">Контакты</string>
+</resources>
